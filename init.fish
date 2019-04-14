@@ -1,17 +1,21 @@
 echo "🐟🐟🐟 running init.fish 🐟🐟🐟"
 
 # GLOBALS
+set -xg FISH_PATH $HOME/.fish.d
+
 set -xg PROJECTS_PATH $HOME/code
+
 set -xg DOTFILES $PROJECTS_PATH/dotfiles
-set -xg OMF $DOTFILES/.config/omf
+# set -xg OMF $DOTFILES/.config/omf
+
 # versions
 set -xg USER_RUBY_VERSION 2.6.1
 set -xg USER_RAILS_VERSION 5.2.0
 
-set -xg EMACS_PATH $DOTFILES/.emacs.d
-set -xg BEFORE_INIT_FILE $OMF/before.init.fish
-set -xg INIT_FILE $OMF/init.fish
-set -xg EMACS_FILE $EMACS/readme.org
+set -xg EMACS_PATH $HOME/.emacs.d
+set -xg BEFORE_INIT_FILE $FISH_PATH/before.init.fish
+set -xg INIT_FILE $FISH_PATH/init.fish
+set -xg EMACS_FILE $EMACS_PATH/readme.org
 set -xg BASH_FILE $DOTFILES/.bash_profile
 
 # EXPORTS
@@ -28,17 +32,17 @@ abbr -ag s $HOME/code
 abbr -ag cfdf    $EDITOR $DOTFILES/bootstrap.exclude.sh
 abbr -ag cff     $EDITOR $INIT_FILE
 abbr -ag cfb     $EDITOR $BASH_FILE
-abbr -ag cfe     $EDITOR $EMACS_PATH/readme.org
+abbr -ag cfe     $EDITOR $EMACS_FILE
 abbr -ag srcf    source $INIT_FILE
 abbr -ag srcb    source $BASH_FILE
 abbr -ag fishit  vim $INIT_FILE
 abbr -ag bashit  vim $BASH_FILE
 abbr -ag opendf  open $DOTFILES
-abbr -ag openff  open $OMF
+abbr -ag openff  open $FISH_PATH
 # `cd` there
-abbr -ag dotfiles  $DOTFILES
-abbr -ag fishfiles  $OMF
-abbr -ag ffs  $OMF
+abbr -ag dotfiles   $DOTFILES
+abbr -ag fishfiles  $FISH_PATH
+abbr -ag ffs  $FISH_PATH
 
 # common shell commands
 abbr -ag ll  ls -alP
