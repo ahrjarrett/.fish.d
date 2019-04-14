@@ -1,2 +1,2 @@
-echo "🐟🐟🐟 before init.fish 🐟🐟🐟"
+#echo "🐟🐟🐟 before init.fish 🐟🐟🐟"
 

@@ -1,4 +1,5 @@
-echo "🐟🐟🐟 running init.fish 🐟🐟🐟"
+echo ""
+echo "OMF 🍣 ->> running init.fish"
 
 # GLOBALS
 set -xg FISH_PATH $HOME/.fish.d
@@ -75,6 +76,9 @@ abbr -ag pgno  launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.
 # PATH
 status --is-interactive; and source (rbenv init -|psub)
 
+# remove legacy keybindings for fish fzf config:
+set -U FZF_LEGACY_KEYBINDINGS 0
+set -U FZF_DEFAULT_OPS "--extended"
 
 
 
