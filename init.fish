@@ -1,7 +1,7 @@
 echo ""
 echo "OMF 🍣 ->> running init.fish"
 
-# GLOBALS
+# globals
 set -xg FISH_PATH $HOME/.fish.d
 
 set -xg PROJECTS_PATH $HOME/code
@@ -19,11 +19,11 @@ set -xg INIT_FILE $FISH_PATH/init.fish
 set -xg EMACS_FILE $EMACS_PATH/readme.org
 set -xg BASH_FILE $DOTFILES/.bash_profile
 
-# EXPORTS
-set -x EDITOR code
+# exports
+set -xg EDITOR vim
 set -x BROWSER chrome
 
-# ABBREVS
+# abbrevs
 abbr -ag d $HOME/Desktop
 abbr -ag o $HOME/Documents
 abbr -ag l $HOME/Downloads
@@ -68,18 +68,17 @@ abbr -ag pgno  launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.
 # To have launchd start postgresql at login:
 #brew services start postgresql
 
-# omf
-### Not working?
+### omf ###
+# not working?
 #abbr -ag try theme
 
 
-# PATH
+### path ###
 status --is-interactive; and source (rbenv init -|psub)
 
+### fzf ###
 # remove legacy keybindings for fish fzf config:
-set -U FZF_LEGACY_KEYBINDINGS 0
-set -U FZF_DEFAULT_OPS "--extended"
-
-
+set -U FZF_LEGACY_KEYBINDINGS 1
+set -U FZF_DEFAULT_OPTS "--extended"
 
 
