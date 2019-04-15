@@ -62,5 +62,23 @@ I'm forking it so I can play with some customizations, right now I'd like it to 
 | Ctrl-q  | omf reload                |
 
 
+** Thinking of going rogue?
+
+What really intrigued me about fish was when I saw [[https://fishshell.com/docs/current/index.html#editor][this snippet in their docs]]. 
+
+#+BEGIN_SRC shell
+  function hybrid_bindings --description 
+    "Vi-style bindings that inherit 
+    emacs-style bindings in all modes"
+    for mode in default insert visual
+      fish_default_key_bindings -M $mode
+    end
+    fish_vi_key_bindings --no-erase
+  end
+  set -g fish_key_bindings hybrid_bindings
+#+END_SRC
  
+See also the fish keybindings file in this directory.
+ 
+
  
