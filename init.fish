@@ -1,35 +1,24 @@
-echo ""
-echo "OMF 🍣 ->> running init.fish"
+#echo ""
+#echo "OMF 🍣 ->> running init.fish"
 
 # globals
 set -xg FISH_PATH $HOME/.fish.d
-
 set -xg PROJECTS_PATH $HOME/code
-
 set -xg DOTFILES $PROJECTS_PATH/dotfiles
-# set -xg OMF $DOTFILES/.config/omf
-
-# versions
 set -xg USER_RUBY_VERSION 2.6.1
 set -xg USER_RAILS_VERSION 5.2.0
-
 set -xg EMACS_PATH $HOME/.emacs.d
 set -xg BEFORE_INIT_FILE $FISH_PATH/before.init.fish
 set -xg INIT_FILE $FISH_PATH/init.fish
 set -xg EMACS_FILE $EMACS_PATH/readme.org
 set -xg BASH_FILE $DOTFILES/.bash_profile
-
-# exports
 set -xg EDITOR vim
-set -x BROWSER chrome
+set -xg BROWSER chrome
+
+# temp
+abbr -ag socks  cd $HOME/code/account.sockclub.com
 
 # abbrevs
-abbr -ag d $HOME/Desktop
-abbr -ag o $HOME/Documents
-abbr -ag l $HOME/Downloads
-abbr -ag s $HOME/code
-
-# config files
 abbr -ag cfdf    $EDITOR $DOTFILES/bootstrap.exclude.sh
 abbr -ag cff     $EDITOR $INIT_FILE
 abbr -ag cfb     $EDITOR $BASH_FILE
@@ -40,45 +29,51 @@ abbr -ag fishit  vim $INIT_FILE
 abbr -ag bashit  vim $BASH_FILE
 abbr -ag opendf  open $DOTFILES
 abbr -ag openff  open $FISH_PATH
-# `cd` there
 abbr -ag dotfiles   $DOTFILES
 abbr -ag fishfiles  $FISH_PATH
 abbr -ag ffs  $FISH_PATH
 
-# common shell commands
-abbr -ag ll  ls -alP
+# general
+abbr -ag ll  ls -alPh
 abbr -ag c   clear
 abbr -ag sshutdown  sudo shutdown -h now
+abbr -ag showit "defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+abbr -ag hideit "defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# ssh
+abbr -ag thegrepper   "ssh root@159.65.76.75"
+abbr -ag projection   "ssh projection@172.16.1.101"
+abbr -ag marketplace  "ssh jarrett@marketplace9.prod"
+abbr -ag ga cashdash1 "cd ~/.ssh && ssh -i cashdash.pem ec2-user@10.21.2.170"
+abbr -ag ga cashdashcelery "cd ~/.ssh && ssh -i cashdash.pem ec2-user@10.21.4.92"
+
 # git
 abbr -ag ga     git add -A
 abbr -ag gs     git status
 abbr -ag gco    git checkout
 abbr -ag gcm    git commit -m
 abbr -ag gpom   git push origin master
+abbr -ag ghash  clipboard_git_hash
 
 # databases
+### If you want dbs launched automatically at login:
+#brew services start mysql
+#brew services start postgresql
 abbr -ag sqlgo   (which mysql).server start
 abbr -ag sqlno   (which mysql).server stop
 abbr -ag sqldoh  (which mysql).server restart
 abbr -ag pggo  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 abbr -ag pgno  launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
-### If you want ^^ launched automatically at login: ###
-# To have launchd start mysql at login:
-#brew services start mysql
-# To have launchd start postgresql at login:
-#brew services start postgresql
 
-### omf ###
-# not working?
-#abbr -ag try theme
-
-
-### path ###
+# path
+set -x PATH /usr/local/bin (string match -v /usr/local/bin $PATH)
 status --is-interactive; and source (rbenv init -|psub)
+# add /usr/local/bin to front of path, then remove it from wherever it was
 
 ### fzf ###
 # remove legacy keybindings for fish fzf config:
-set -U FZF_LEGACY_KEYBINDINGS 1
-set -U FZF_DEFAULT_OPTS "--extended"
-
-
+set -xg FZF_LEGACY_KEYBINDINGS 1
+set -xg FZF_DEFAULT_OPTS "--extended --height 40"
+set -xg FZF_FIND_FILE_OPTS --reverse --inline-info
+set -xg FZF_ENABLE_OPEN_PREVIEW 1
+set -xg FZF_COMPLETE 2

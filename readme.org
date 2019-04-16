@@ -82,3 +82,63 @@ See also the fish keybindings file in this directory.
  
 
  
+
+
+* functions
+
+** print_fish_colors
+
+Prints a table with background in color displaying defined fish colors in scope.
+
+#+BEGIN_SRC shell
+function print_fish_colors --description 'Shows the various fish colors being used'
+    set -l clr_list (set -n | grep fish | grep color | grep -v __)
+    if test -n "$clr_list"
+        set -l bclr (set_color normal)
+        set -l bold (set_color --bold)
+        printf "\n| %-38s | %-38s |\n" Variable Definition
+        echo '|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|'
+        for var in $clr_list
+            set -l def $$var
+            set -l clr (set_color $def ^/dev/null)
+            or begin
+                printf "| %-38s | %s%-38s$bclr |\n" "$var" (set_color --bold white --background=red) "$def"
+                continue
+            end
+            printf "| $clr%-38s$bclr | $bold%-38s$bclr |\n" "$var" "$def"
+        end
+        echo '|________________________________________|________________________________________|'\n
+    end
+end
+#+END_SRC
+
+Returns (variable backgrounds renderingin color):
+
+| Variable                               | Definition                             |
+|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
+| fish_color_autosuggestion              | 555 brblack                            |
+| fish_color_cancel                      | -r                                     |
+| fish_color_command                     | 005fd7                                 |
+| fish_color_comment                     | 990000                                 |
+| fish_color_cwd                         | green                                  |
+| fish_color_cwd_root                    | red                                    |
+| fish_color_end                         | 009900                                 |
+| fish_color_error                       | ff0000                                 |
+| fish_color_escape                      | 00a6b2                                 |
+| fish_color_history_current             | --bold                                 |
+| fish_color_host                        | normal                                 |
+| fish_color_match                       | --background=brblue                    |
+| fish_color_normal                      | normal                                 |
+| fish_color_operator                    | 00a6b2                                 |
+| fish_color_param                       | 00afff                                 |
+| fish_color_quote                       | 999900                                 |
+| fish_color_redirection                 | 00afff                                 |
+| fish_color_search_match                | bryellow --background=brblack          |
+| fish_color_selection                   | white --bold --background=brblack      |
+| fish_color_user                        | brgreen                                |
+| fish_color_valid_path                  | --underline                            |
+| fish_pager_color_completion            |                                        |
+| fish_pager_color_description           | B3A06D yellow                          |
+| fish_pager_color_prefix                | white --bold --underline               |
+| fish_pager_color_progress              | brwhite --background=cyan              |
+|________________________________________|________________________________________|
