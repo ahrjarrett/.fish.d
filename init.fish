@@ -19,7 +19,7 @@ set -xg BROWSER chrome
 abbr -ag socks  cd $HOME/code/account.sockclub.com
 
 # abbrevs
-abbr -ag cfdf    $EDITOR $DOTFILES/bootstrap.exclude.sh
+abbr -ag cfdf    $EDITOR $DOTFILES/bootstrap/bootstrap.sh
 abbr -ag cff     $EDITOR $INIT_FILE
 abbr -ag cfb     $EDITOR $BASH_FILE
 abbr -ag cfe     $EDITOR $EMACS_FILE
@@ -32,10 +32,14 @@ abbr -ag openff  open $FISH_PATH
 abbr -ag dotfiles   $DOTFILES
 abbr -ag fishfiles  $FISH_PATH
 abbr -ag ffs  $FISH_PATH
+abbr -ag d  cd ~/Desktop
+abbr -ag c  cd ~/code
+abbr -ag l  cd ~/Downloads
+abbr -ag o  cd ~/Documents
 
 # general
 abbr -ag ll  ls -alPh
-abbr -ag c   clear
+# abbr -ag c   clear
 abbr -ag sshutdown  sudo shutdown -h now
 abbr -ag showit "defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 abbr -ag hideit "defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
