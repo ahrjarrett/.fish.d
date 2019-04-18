@@ -82,3 +82,7 @@ set -xg FZF_DEFAULT_OPTS "--extended --height 40"
 set -xg FZF_FIND_FILE_OPTS --reverse --inline-info
 set -xg FZF_ENABLE_OPEN_PREVIEW 1
 set -xg FZF_COMPLETE 2
+
+#source "$FISH_PATH/themes/aj-theme/fish_prompt.fish"
+
+
