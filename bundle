@@ -1,3 +1,4 @@
+package bass
 package emacs
 package https://github.com/ahrjarrett/fzf
 package https://github.com/laughedelic/pisces

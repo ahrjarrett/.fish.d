@@ -13,7 +13,9 @@ set -xg BEFORE_INIT_FILE $FISH_PATH/before.init.fish
 set -xg INIT_FILE $FISH_PATH/init.fish
 set -xg EMACS_FILE $EMACS_PATH/readme.org
 set -xg BASH_FILE $DOTFILES/.bash_profile
-set -xg EDITOR vim
+#set -xg VIM_FILE $DOTFILES/.vim/vimrc
+set -xg VIM_FILE $DOTFILES/nvim/init.vim
+set -xg EDITOR nvim
 set -xg BROWSER chrome
 
 # temp
@@ -26,8 +28,9 @@ abbr -ag cfb     $EDITOR $BASH_FILE
 abbr -ag cfe     $EDITOR $EMACS_FILE
 abbr -ag srcf    source $INIT_FILE
 abbr -ag srcb    source $BASH_FILE
-abbr -ag fishit  vim $INIT_FILE
-abbr -ag bashit  vim $BASH_FILE
+abbr -ag fishit  nvim $INIT_FILE
+abbr -ag bashit  nvim $BASH_FILE
+abbr -ag vimmit  nvim $VIM_FILE
 abbr -ag opendf  open $DOTFILES
 abbr -ag openff  open $FISH_PATH
 abbr -ag dotfiles   $DOTFILES
@@ -82,7 +85,4 @@ set -xg FZF_DEFAULT_OPTS "--extended --height 40"
 set -xg FZF_FIND_FILE_OPTS --reverse --inline-info
 set -xg FZF_ENABLE_OPEN_PREVIEW 1
 set -xg FZF_COMPLETE 2
-
-#source "$FISH_PATH/themes/aj-theme/fish_prompt.fish"
-
 

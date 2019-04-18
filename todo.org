@@ -1,8 +1,0 @@
-
-* yanklast
-
-function that copies output of last command and pipes it to pbcopy
-
-
-
-
