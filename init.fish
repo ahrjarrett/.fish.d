@@ -3,6 +3,7 @@
 
 # globals
 set -xg FISH_PATH $HOME/.fish.d
+set -xg OMF_CONFIG $FISH_PATH
 set -xg PROJECTS_PATH $HOME/code
 set -xg DOTFILES $PROJECTS_PATH/dotfiles
 set -xg USER_RUBY_VERSION 2.6.1
