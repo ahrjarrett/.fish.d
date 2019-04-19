@@ -40,5 +40,5 @@ function fish_right_prompt
         end
     end)(__color_snd)") "(__color_off)
   end
-  printf (__color_dim)(date +%H(__color_fst):(__color_dim)%M(__color_fst):(__color_dim)%S)(__color_off)" "
+  #printf (__color_dim)(date +%H(__color_fst):(__color_dim)%M(__color_fst):(__color_dim)%S)(__color_off)" "
 end

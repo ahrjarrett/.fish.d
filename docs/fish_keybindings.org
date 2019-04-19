@@ -1,0 +1,44 @@
+#+TITLE: fish keybindings
+#+AUTHOR: Andrew Jarrett
+#+EMAIL:ahrjarrett@gmail.com
+#+DATE: 04/14/2019
+
+From the [[https://fishshell.com/docs/current/index.html#editor][fish shell docs]].
+
+| Key       | Alternate | Behavior                                                            |
+|-----------+-----------+---------------------------------------------------------------------|
+| Tab       |           | completes the current token                                         |
+| Shift Tab |           | completes tone, starts pager's search mode                          |
+| Alt←/Alt→ | AltF      | move cursor 1 work L/R, forward/backward (1*)                       |
+| ↑/↓       | ^+n / ^+p | search command history /for the string previous to the query/ (2**) |
+| ^+c       |           | Cancel line                                                         |
+| ^+d       |           | Delete 1 char to the right of cursor /(useless, remap)/             |
+| ^+u       |           | Same as in REPL                                                     |
+| ^+l       |           | Same as in every REPL                                               |
+| ^+x       |           | Copies buffer to system clipboard                                   |
+| ^+v       |           | Insert clipboard contents                                           |
+| ^+w       |           | *Moves previous path component (split on "/") to killright*         |
+| AltH      |           | Show man page for current command                                   |
+| Altl      |           | List contents of current, or cursored over, directory -- /ehh/      |
+| Altp      |           | ~2>&1 ! less;~, paginate output (bang is actually a pipe)           |
+| Altw      |           | Show short description of command (often humorous)                  |
+| Alte      | Altv      | Drop current line into editor (Vim)                                 |
+|-----------+-----------+---------------------------------------------------------------------|
+|           |           | EMACS MODE COMMANDS                                                 |
+| ^+a       |           | Beginning of line                                                   |
+| ^+e       |           | End of line (accept selection, if already at end of line)           |
+| ^+k       |           | Move cursor to end of line to killring                              |
+| Altc      |           | Capitalize word                                                     |
+| Altu      |           | Uppercase word                                                      |
+| ^+t       |           | Transpose last 2 characters /really annoying, remap/                |
+| ^+t       |           | Transpose last 2 words *(this is much more useful)*                 |
+                                                          
+Notes:
+
+1. It's actually more complicated than that: 
+ 
+   #+BEGIN_QUOTE
+Alt← and Alt→ move the cursor one word left or right, or moves forward/backward in the directory history if the command line is empty. If the cursor is already at the end of the line, and an autosuggestion is available, Alt→ (or AltF) accepts the first word in the suggestion.
+#+END_QUOTE
+
+2. This is complicated to describe, but is actually very intuitive in practice.
