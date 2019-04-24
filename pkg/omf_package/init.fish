@@ -5,5 +5,5 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
-echo "$package $path $dependencies"
+#echo "$package $path $dependencies"
 

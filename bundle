@@ -2,5 +2,4 @@ package bass
 package emacs
 package https://github.com/Jomik/fish-gruvbox
 package https://github.com/ahrjarrett/fzf
-package https://github.com/laughedelic/pisces
 package https://github.com/oh-my-fish/plugin-bang-bang

@@ -8,14 +8,15 @@ function fish_prompt
 
   set -l expr "s|~|"(__color_trd)"~@"(__color_off)"|g; \
                s|/|"(__color_snd)"/"(set_color 928374)"|g;  \
-               s|"$base"|"(__color_fst)$base(__color_off)" |g"
+               s|"$base"|"(__color_fst)$base(__color_off)"|g"
 
-  echo -n (echo "$pwd" | sed -e $expr)(__color_off)
+  echo -n (echo (set_color -o ffffff)"♖ $pwd" | sed -e $expr)(__color_off)
 
   # for color in $colors
   #   echo -n (set_color $color)">"
   # end
 
-  echo -n (set_color bdae93)"-> "
+  #echo -n (set_color bdae93)" -> "
+  echo -n (__color_off)" -> "
 end
 
