@@ -19,6 +19,7 @@ set -xg BROWSER chrome
 
 # temp
 abbr -ag socks  cd $HOME/code/account.sockclub.com
+abbr -ag mp  cd $HOME/code/ownlocal/Marketplace-web
 
 # abbrevs
 abbr -ag dfs     $DOTFILES
@@ -63,10 +64,11 @@ abbr -ag ghash  clipboard_git_hash
 # dbs
 # launch dbs automatically at login:
 #brew services start mysql
+#brew services start mysql@5.6
 #brew services start postgresql
-abbr -ag sqlgo   (which mysql).server start
-abbr -ag sqlno   (which mysql).server stop
-abbr -ag sqldoh  (which mysql).server restart
+#abbr -ag sqlgo   (which mysql).server start
+#abbr -ag sqlno   (which mysql).server stop
+#abbr -ag sqldoh  (which mysql).server restart
 abbr -ag pggo  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 abbr -ag pgno  launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
@@ -81,6 +83,7 @@ set -xg FZF_FIND_FILE_OPTS --reverse --inline-info
 set -xg FZF_ENABLE_OPEN_PREVIEW 1
 set -xg FZF_COMPLETE 2
 #set -xg FZF_PREVIEW_FILE_CMD "head -n 10"
+set -xg FZF_DEFAULT_COMMAND = 'ag --nocolor -H -g "" 2>/dev/null'
 set -xg FZF_PREVIEW_FILE_CMD "bat"
 set -xg FZF_PREVIEW_DIR_CMD "ls"
 
