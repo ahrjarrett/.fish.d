@@ -3,6 +3,12 @@ if test -f ~/.env.fish
   source ~/.env.fish
 end
 
+# Load abbrevs
+if test $fish_abbreviations_set = false
+  set_abbr
+  set -U fish_abbreviations_set true
+end
+
 function fish_greeting
 end
 
@@ -14,9 +20,13 @@ function fish_title
 end
 
 set -gx DOTFILES $HOME/dotfiles
-set -gx FISH_FILE $HOME/fish.d/config.fish
+set -gx FISH_PATH $HOME/fish.d
+set -gx FISH_FILE $FISH_PATH/config.fish
 set -gx BASH_FILE $HOME/.bash_profile
 set -gx VIM_FILE $HOME/nvim/init.vim
 set -gx EDITOR nvim
 
-theme_gruvbox dark medium
+
+#theme_gruvbox dark medium
+source ~/.iterm2_shell_integration.fish
+
