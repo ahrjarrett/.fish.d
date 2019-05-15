@@ -6,10 +6,10 @@ abbr -a -U  l       ~/Downloads
 abbr -a -U  o       ~/Documents
 abbr -a -U  fishit  nvim $FISH_FILE
 abbr -a -U  bashit  nvim $BASH_FILE
-abbr -a -U  vimmit  nvim $VIM_FILE
+abbr -a -U  vimmit  nvim $VIM_FILE && clear
 
 # commands
-abbr -a -U  ll     ls -alP
+abbr -a -U  ll     ls -alF
 abbr -a -U  ga     git add -A
 abbr -a -U  gs     git status
 abbr -a -U  gco    git checkout

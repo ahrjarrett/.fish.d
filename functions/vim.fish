@@ -1,4 +1,4 @@
 function vim
-  nvim $argv
+  nvim $argv && clear
 end
 

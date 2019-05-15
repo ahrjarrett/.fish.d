@@ -26,7 +26,8 @@ set -gx BASH_FILE $HOME/.bash_profile
 set -gx VIM_FILE $HOME/nvim/init.vim
 set -gx EDITOR nvim
 
-
-#theme_gruvbox dark medium
+# meant for Linux!
+source ~/.profile
 source ~/.iterm2_shell_integration.fish
+source $FISH_PATH/abbr.fish
 
