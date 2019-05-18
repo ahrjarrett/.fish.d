@@ -1,11 +1,20 @@
+set -gx DOTFILES $HOME/dotfiles
+set -gx FISH_PATH $HOME/fish.d
+set -gx FISH_FILE $FISH_PATH/config.fish
+set -gx BASH_FILE $HOME/.bash_profile
+set -gx VIM_FILE $HOME/nvim/init.vim
+set -gx EDITOR nvim
+
+set -gx fish_escape_delay_ms 10
+
 # Load env variables
-if test -f ~/.env.fish
-  source ~/.env.fish
+if test -f $FISH_PATH/env.fish
+  source $FISH_PATH/env.fish
 end
 
 # Load abbrevs
-if test $fish_abbreviations_set = false
-  set_abbr
+if not set -q fish_abbreviations_set
+  source $FISH_PATH/functions/set_abbr.fish
   set -U fish_abbreviations_set true
 end
 
@@ -19,14 +28,10 @@ function fish_title
     or prompt_pwd
 end
 
-set -gx DOTFILES $HOME/dotfiles
-set -gx FISH_PATH $HOME/fish.d
-set -gx FISH_FILE $FISH_PATH/config.fish
-set -gx BASH_FILE $HOME/.bash_profile
-set -gx VIM_FILE $HOME/nvim/init.vim
-set -gx EDITOR nvim
+### TURN ON FOR VIM NODE ONLY! ###
+#set -q fish_escape_delay_ms 10
+#
+#fish_user_key_bindings
 
-
-#theme_gruvbox dark medium
-source ~/.iterm2_shell_integration.fish
+rvm default
 
