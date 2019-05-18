@@ -35,3 +35,6 @@ end
 
 rvm default
 
+# meant for Linux!
+source ~/.profile
+
