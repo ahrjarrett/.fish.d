@@ -2,8 +2,9 @@ set -gx DOTFILES $HOME/dotfiles
 set -gx FISH_PATH $HOME/fish.d
 set -gx FISH_FILE $FISH_PATH/config.fish
 set -gx BASH_FILE $HOME/.bash_profile
-set -gx VIM_FILE $HOME/nvim/init.vim
-set -gx EDITOR nvim
+set -gx VIM_FILE $DOTFILES/nvim/init.vim
+set -gx EDITOR vim
+set -gx READER zathura
 
 set -gx fish_escape_delay_ms 10
 
@@ -35,6 +36,31 @@ end
 
 rvm default
 
-# meant for Linux!
+
+###########################################
+################# ARCH ####################
+###########################################
+
+# stupid shell shit to bootstrap i3 & get key mappings:
 source ~/.profile
+source ~/me
+
+### SYSTEMCTL ###
+## mbpfan is ded -_- avoid degraded status/overheating by launching manually:
+sudo systemctl reset-failed
+
+# minikube #
+#sudo systemctl enable libvirtd.service
+#sudo systemctl enable virtlogd.service
+
+#sudo systemctl enable docker.service
+
+# mysql
+#/usr/bin/mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+#/usr/bin/mysqladmin -u root
+#/usr/bin/mysqladmin -u root -h mysql
+#launch at startup:
+#sudo systemctl start mysql
+
+
 

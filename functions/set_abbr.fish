@@ -11,7 +11,7 @@ abbr -a -U  bashit  nvim $BASH_FILE
 abbr -a -U  vimmit  nvim $VIM_FILE
 
 # commands
-abbr -a -U  ll     ls -alP
+abbr -a -U  ll     ls -al --group-directories-first
 abbr -a -U  ga     git add -A
 abbr -a -U  gs     git status
 abbr -a -U  gco    git checkout
