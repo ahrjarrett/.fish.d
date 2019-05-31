@@ -27,9 +27,6 @@ abbr -a -U  ghash  clipboard_git_hash
 #abbr -a -U  pggo    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 #abbr -a -U  pgno    launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
-abbr -a -U  showit  "defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-abbr -a -U  hideit  "defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
 # ssh
 abbr -a -U  thegrepper   "ssh root@159.65.76.75"
 abbr -a -U  projection   "ssh projection@172.16.1.101"
