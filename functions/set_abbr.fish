@@ -11,13 +11,14 @@ abbr -a -U  bashit  nvim $BASH_FILE
 abbr -a -U  vimmit  nvim $VIM_FILE
 
 # commands
-abbr -a -U  ll     ls -al --group-directories-first
 abbr -a -U  ga     git add -A
 abbr -a -U  gs     git status
 abbr -a -U  gco    git checkout
 abbr -a -U  gcm    git commit -m
 abbr -a -U  gpo    git push origin
 abbr -a -U  ghash  clipboard_git_hash
+### make into function:
+#abbr -a -U  ll     ls -al --group-directories-first
 
 # databases
 #abbr -a -U  sqlgo   (which mysql).server start
