@@ -1,13 +1,9 @@
-I've been learning a new shell lately.
+I fish!
 
 #+TITLE: .fish.d
 #+AUTHOR: Andrew Jarrett
 #+EMAIL:ahrjarrett@gmail.com
 #+DATE: 04/14/2019
-
-Fish so far?
-
-So far I'm really digging it. Maybe we're still in the honeymoon phase, but what's not to love about a [[https://fishshell.com/docs/current/index.html#editor][Command Line Editor]]? It's gotten me back into Vim, back into Emacs, back thinking about workflows again.
 
 Discoverability is the glue that holds a workflow together.
 
