@@ -22,12 +22,12 @@ function fish_greeting
 end
 
 # Better titles
-function fish_title
-  test (count $argv) -gt 0
-    and echo $argv[1]
-    or prompt_pwd
-  iterm2_prompt_mark
-end
+#function fish_title
+#  test (count $argv) -gt 0
+#    and echo $argv[1]
+#    or prompt_pwd
+#  iterm2_prompt_mark
+#end
 
 ### TURN ON FOR VIM NODE ONLY! ###
 #set -q fish_escape_delay_ms 10
@@ -41,7 +41,7 @@ end
 
 #set -g fish_user_paths "/usr/local/opt/mysql@5.6/bin" $fish_user_paths
 
-source ~/.iterm2_shell_integration.(basename $SHELL)
+#source ~/.iterm2_shell_integration.(basename $SHELL)
 
 ### GCLOUD SDK
 # tabtab source for serverless package

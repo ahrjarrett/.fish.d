@@ -17,7 +17,7 @@ abbr -a -U  gs        git status
 abbr -a -U  gb        git branch
 abbr -a -U  gba       git branch -a
 abbr -a -U  gco       git checkout
-abbr -a -U  gcm       git commit -m \'
+abbr -a -U  gcm       git commit -m \'\' --no-verify
 abbr -a -U  gpo       git push origin
 abbr -a -U  ghash     clipboard_git_hash
 abbr -a -U  shutdown  sudo shutdown -h now

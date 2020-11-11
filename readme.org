@@ -5,6 +5,11 @@ I fish!
 #+EMAIL:ahrjarrett@gmail.com
 #+DATE: 04/14/2019
 
+#+begin_src shell
+mkdir /Users/andrew/jarrett/.config/fish # if it doesn't already exist; if it does and not symlinked, delete it
+ln -sv /Users/andrewjarrett/.fish.d/* /Users/andrewjarrett/.config/fish
+#+end_src 
+
 Discoverability is the glue that holds a workflow together.
 
 I've daydreamed before of a wrapper around [[https://github.com/ggreer/the_silver_searcher][ag]] that would let me glide through a knowledge- or a codebase, searching without knowing, fluid and fuzzy at the same time.
