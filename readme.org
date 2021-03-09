@@ -1,13 +1,16 @@
 I fish!
 
-#+TITLE: .fish.d
+#+TITLE: fish
 #+AUTHOR: Andrew Jarrett
 #+EMAIL:ahrjarrett@gmail.com
 #+DATE: 04/14/2019
 
 #+begin_src shell
-mkdir /Users/andrew/jarrett/.config/fish # if it doesn't already exist; if it does and not symlinked, delete it
+mkdir $HOME/.config/fish # if it doesn't already exist; if it does and not symlinked, delete it
 ln -sv /Users/andrewjarrett/.fish.d/* /Users/andrewjarrett/.config/fish
+
+# or, if you want the directory to be symlinked, you'll have to rename this directory from `.fish.d` to `fish`, otherwise I don't think there's a way to symlink a directory while also giving it an alias
+ln -sx /Users/andrewjarrett/fish/ /Users/andrewjarrett/.config/fish
 #+end_src 
 
 Discoverability is the glue that holds a workflow together.

@@ -1,5 +1,5 @@
 set -gx DOTFILES $HOME/dotfiles
-set -gx FISH_PATH $HOME/.fish.d
+set -gx FISH_PATH $HOME/fish
 set -gx FISH_FILE $FISH_PATH/config.fish
 set -gx BASH_FILE $HOME/.bash_profile
 set -gx VIM_FILE $HOME/nvim/init.vim
