@@ -34,22 +34,7 @@ end
 
 ### TURN ON FOR VIM NODE ONLY! ###
 #set -q fish_escape_delay_ms 10
-#
 #fish_user_key_bindings
-
-#rvm default
 
 #source ~/.iterm2_shell_integration.(basename $SHELL)
 
-### GCLOUD SDK
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/aj/ownlocal/two-step/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/aj/ownlocal/two-step/node_modules/tabtab/.completions/serverless.fish
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/aj/ownlocal/two-step/node_modules/tabtab/.completions/sls.fish ]; and . /Users/aj/ownlocal/two-step/node_modules/tabtab/.completions/sls.fish
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/aj/google-cloud-sdk/path.fish.inc' ]; . '/Users/aj/google-cloud-sdk/path.fish.inc'; end
-
-# opam configuration
-source /Users/aj/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
