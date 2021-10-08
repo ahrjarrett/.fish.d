@@ -1,11 +1,14 @@
-set -gx DOTFILES $HOME/dotfiles
-set -gx FISH_PATH $HOME/fish
-set -gx FISH_FILE $FISH_PATH/config.fish
-set -gx BASH_FILE $HOME/.bash_profile
-set -gx VIM_FILE $HOME/nvim/init.vim
-set -gx EDITOR nvim
+set --export --global DOTFILES $HOME/dotfiles
+set --export --global FISH_PATH $HOME/.fish.d
+set --export --global FISH_FILE $FISH_PATH/config.fish
+set --export --global BASH_FILE $HOME/.bash_profile
+set --export --global VIM_FILE $HOME/nvim/init.vim
+set --export --global EDITOR nvim
+set --export --global DOTENVENC_KEY Swear!23
 
-set -gx fish_escape_delay_ms 10
+set --export --global GOOGLE_APPLICATION_CREDENTIALS $HOME/.config/gcloud/application_default_credentials.json
+
+set --export --global fish_escape_delay_ms 10
 
 # Load env variables
 if test -f $FISH_PATH/env.fish
@@ -13,36 +16,31 @@ if test -f $FISH_PATH/env.fish
 end
 
 # Load abbrevs
-if not set -q fish_abbreviations_set
+if not set -q __aj__fish_abbreviations_set
   source $FISH_PATH/functions/set_abbr.fish
-  set -U fish_abbreviations_set true
+  set -U __aj__fish_abbreviations_set true
+end
+
+# Set PATH
+if not set -q __aj__fish_path_set
+  source $FISH_PATH/functions/set_path.fish
+  set -U __aj__fish_path_set true
 end
 
 function fish_greeting
 end
 
 # Better titles
-function fish_title
-  test (count $argv) -gt 0
-    and echo $argv[1]
-    or prompt_pwd
-end
+#function fish_title
+#  test (count $argv) -gt 0
+#    and echo $argv[1]
+#    or prompt_pwd
+#  iterm2_prompt_mark
+#end
 
 ### TURN ON FOR VIM NODE ONLY! ###
 #set -q fish_escape_delay_ms 10
-#
 #fish_user_key_bindings
 
-rvm default
+#source ~/.iterm2_shell_integration.(basename $SHELL)
 
-# meant for Linux!
-source ~/.profile
-
-set -g fish_user_paths "/usr/local/opt/mysql@5.6/bin" $fish_user_paths
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/aj/ownlocal/two-step/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/aj/ownlocal/two-step/node_modules/tabtab/.completions/serverless.fish
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/aj/ownlocal/two-step/node_modules/tabtab/.completions/sls.fish ]; and . /Users/aj/ownlocal/two-step/node_modules/tabtab/.completions/sls.fish
