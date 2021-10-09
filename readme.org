@@ -6,8 +6,12 @@ I fish!
 #+DATE: 04/14/2019
 
 #+begin_src shell
-mkdir $HOME/.config/fish # if it doesn't already exist; if it does and not symlinked, delete it
-ln -sv /Users/andrewjarrett/.fish.d/* /Users/andrewjarrett/.config/fish
+# install repo, renaming it to `fish`, which is important for the next command to work
+$ cd $HOME && git clone git@github.com:ahrjarrett/.fish.d.git fish
+# needs to be named `fish` AFAIK, bc i don't think there's a way to symlink a directory while also giving it an alias:
+ln -sv $HOME/fish $HOME/.config/fish
+#+end_src
+
 
 # or, if you want the directory to be symlinked, you'll have to rename this directory from `.fish.d` to `fish`, otherwise I don't think there's a way to symlink a directory while also giving it an alias
 ln -sx /Users/andrewjarrett/fish/ /Users/andrewjarrett/.config/fish
