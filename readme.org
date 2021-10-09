@@ -12,23 +12,7 @@ $ cd $HOME && git clone git@github.com:ahrjarrett/.fish.d.git fish
 ln -sv $HOME/fish $HOME/.config/fish
 #+end_src
 
-
-# or, if you want the directory to be symlinked, you'll have to rename this directory from `.fish.d` to `fish`, otherwise I don't think there's a way to symlink a directory while also giving it an alias
-ln -sx /Users/andrewjarrett/fish/ /Users/andrewjarrett/.config/fish
-#+end_src 
-
-Discoverability is the glue that holds a workflow together.
-
-I've daydreamed before of a wrapper around [[https://github.com/ggreer/the_silver_searcher][ag]] that would let me glide through a knowledge- or a codebase, searching without knowing, fluid and fuzzy at the same time.
-
-Which is why I'm also jazzed that I discovered [[https://github.com/junegunn/fzf][fzf]] around the same time. They feel great together.
-
-True, there's a little work involved in getting them set up together, but as soon as I got them wired up it started to feel like it could be special.
-
 * ~fish + fzf~
-
-This repo is a work in progress and is plenty rough around the edges still, but I do have an environment that I'm starting to feel comfortable working on, and woriing in, at the same time.
-
 
 ** Key bindings
 
