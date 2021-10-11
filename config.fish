@@ -1,6 +1,6 @@
 set --export --global  EDITOR     nvim
 set --export --global  DOTFILES   $HOME/dotfiles
-set --export --global  FISH_PATH  $HOME/.fish.d
+set --export --global  FISH_PATH  $HOME/fish
 set --export --global  FISH_FILE  $FISH_PATH/config.fish
 set --export --global  BASH_FILE  $HOME/.bash_profile
 set --export --global  VIM_FILE   $HOME/nvim/init.vim
@@ -18,7 +18,7 @@ end
 source $FISH_PATH/work/$COMPANY.fish
 
 # configure asdf
-source (brew --prefix asdf)/asdf.fish
+# source (brew --prefix asdf)/asdf.fish
 
 # Load abbrevs
 if not set -q __aj__fish_abbreviations_set
@@ -34,6 +34,9 @@ end
 
 function fish_greeting
 end
+
+# load fnm (node version manager written in rust)
+fnm env | source
 
 # Better titles
 #function fish_title

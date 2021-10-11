@@ -38,7 +38,3 @@ abbr -a -U  hideit    "defaults write com.apple.finder AppleShowAllFiles -bool f
 abbr -a -U  glg       git lg
 
 
-
-# ssh
-#abbr -a -U  thegrepper   "ssh root@159.65.76.75"
-
