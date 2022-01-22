@@ -73,3 +73,4 @@ fnm env | source
 #
 ## To check current dir upon Fish session start
 #__check_nvm
+fish_add_path "/opt/homebrew/bin"
