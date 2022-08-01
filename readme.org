@@ -1,87 +1,12 @@
-I fish!
-
 #+TITLE: fish
 #+AUTHOR: Andrew Jarrett
 #+EMAIL:ahrjarrett@gmail.com
 #+DATE: 04/14/2019
 
 #+begin_src shell
-# install repo, renaming it to `fish`, which is important for the next command to work
+# install repo at `~/fish`, which is important for symlink to work
 $ cd $HOME && git clone git@github.com:ahrjarrett/.fish.d.git fish
-# needs to be named `fish` AFAIK, bc i don't think there's a way to symlink a directory while also giving it an alias:
-ln -sv $HOME/fish $HOME/.config/fish
+$ ln -sv $HOME/fish $HOME/.config/fish
+$ echo "# add environment variables here" >> $HOME/fish/.env.fish
 #+end_src
-
-* ~fish + fzf~
-
-** Key bindings
-
-What I haven't figured out yet is how the key mappings will work. ~fzf~ was built with vi-style bindings in mind (or so it seems).
-
-And fish definitely has that awkward hipster Emacs feel. There are "evil" style bindings for fish, but I'm a little wary.
-
-Here's where I'm at as of right now:
-
-The package I use is gracious enough to give you the option of legacy or newer keybindings; I actually like legacy, primarily because the new keybindings take away =^+f=:
-
-
-| Legacy      | New Keybindings | Remarks                                         |
-|-------------+-----------------+-------------------------------------------------|
-| Ctrl-t      | Ctrl-f          | Find a file.                                    |
-| Ctrl-r      | Ctrl-r          | Search through command history.                 |
-| Alt-c       | Alt-o           | cd into sub-directories (recursively searched). |
-| Alt-Shift-c | Alt-Shift-o     | cd into sub-directories, including hidden ones. |
-| Ctrl-o      | Ctrl-o          | Open a file/dir using default editor ($EDITOR)  |
-| Ctrl-g      | Ctrl-g          | Open a file/dir using xdg-open or open command  |
-
-I'm forking it so I can play with some customizations, right now I'd like it to be:
-
-| Binding | Behavior                                             |
-|---------+------------------------------------------------------|
-| \cs     | find a file                                          |
-| \cr     | search through command history                       |
-| \ec     | cd into subdirectory (recursive)                     |
-| \eC     | cd into subdirecrory (recursive, show dotfiles)      |
-| \co     | open file/dir with vim                               |
-| \eo     | open file with open command (room for customization) |
-|         |                                                      |
-
-** Personal keybindings:
-
-| Binding | Behavior                  |
-|---------+---------------------------|
-| Ctrl-g  | cancel (similar to emacs) |
-| Ctrl-q  | omf reload                |
-
-
-** Thinking of going rogue?
-
-What really intrigued me about fish was when I saw [[https://fishshell.com/docs/current/index.html#editor][this snippet in their docs]].
-
-#+BEGIN_SRC shell
-  function hybrid_bindings --description
-    "Vi-style bindings that inherit
-    emacs-style bindings in all modes"
-    for mode in default insert visual
-      fish_default_key_bindings -M $mode
-    end
-    fish_vi_key_bindings --no-erase
-  end
-  set -g fish_key_bindings hybrid_bindings
-#+END_SRC
-
-See also the fish keybindings file in this directory.
-
-
-* packages
-
-Run bash commands by prepending ~bass~
-
-
-
-* functions
-
-** print_fish_colors
-
-Prints a table with background in color displaying defined fish colors in scope.
 
