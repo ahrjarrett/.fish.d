@@ -1,3 +1,5 @@
 .env.fish
 conf.d
 fish_variables
+/functions/.DS_Store
+/work/.DS_Store

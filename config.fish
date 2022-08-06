@@ -1,9 +1,11 @@
-set --export --global  EDITOR     nvim
-set --export --global  DOTFILES   $HOME/dotfiles
-set --export --global  FISH_PATH  $HOME/fish
+#!/opt/homebrew/bin/fish
+
+set --export --global  EDITOR     emacs
+set --export --global  DOTFILES   ~/dotfiles
+set --export --global  BASH_FILE  ~/.bash_profile
+set --export --global  VIM_FILE   ~/nvim/init.vim
+set --export --global  FISH_PATH  ~/fish
 set --export --global  FISH_FILE  $FISH_PATH/config.fish
-set --export --global  BASH_FILE  $HOME/.bash_profile
-set --export --global  VIM_FILE   $HOME/nvim/init.vim
 set --export --global  COMPANY    bondlink
 
 
@@ -21,15 +23,15 @@ source $FISH_PATH/work/$COMPANY.fish
 # source (brew --prefix asdf)/asdf.fish
 
 # Load abbrevs
-if not set -q __aj__fish_abbreviations_set
-  source $FISH_PATH/functions/set_abbr.fish
-  set -U __aj__fish_abbreviations_set true
+if not set -q  _personal_fish_abbreviations_loaded
+  source       $FISH_PATH/abbr.fish
+  set -U       _personal_fish_abbreviations_loaded true
 end
 
 # Set PATH
-if not set -q __aj__fish_path_set
-  source $FISH_PATH/functions/set_path.fish
-  set -U __aj__fish_path_set true
+if not set -q  _personal_fish_path_loaded
+  source       $FISH_PATH/path.fish
+  set -U       _personal_fish_path_set
 end
 
 function fish_greeting
@@ -52,25 +54,4 @@ fnm env | source
 
 #source ~/.iterm2_shell_integration.(basename $SHELL)
 
-
-
-#function __check_nvm --on-variable PWD --description 'Do nvm stuff'
-#  set node_version (nvm version)
-#
-#  if test -f .nvmrc
-#    set nvmrc_node_version (nvm version (cat .nvmrc))
-#
-#    if [ $nvmrc_node_version = "N/A" ]
-#      nvm install
-#    else if [ $nvmrc_node_version != $node_version ]
-#      nvm use
-#    end
-#  else if [ $node_version != (nvm version default) ]
-#    echo Reverting to nvm default version
-#    nvm use default
-#  end
-#end
-#
-## To check current dir upon Fish session start
-#__check_nvm
 fish_add_path "/opt/homebrew/bin"
