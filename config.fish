@@ -55,3 +55,8 @@ fnm env | source
 #source ~/.iterm2_shell_integration.(basename $SHELL)
 
 fish_add_path "/opt/homebrew/bin"
+
+# pnpm
+set -gx PNPM_HOME "/Users/aj/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end
