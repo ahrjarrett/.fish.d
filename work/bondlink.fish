@@ -4,7 +4,7 @@
 set --export --global  PIP_PACKAGE_PATH  /Users/aj/Library/Python/3.8/lib/python/site-packages
 set --export --global  PYTHON3_PATH      /Users/aj/Library/Python/3.8/bin
 set --export --global  JAVA_HOME         /Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
-set --export --global  $RUBY_PATH        /opt/homebrew/opt/ruby@2.7/bin
+set --export --global  RUBY_PATH         /opt/homebrew/opt/ruby@2.7/bin
 
 #####################
 ### ABBREVIATIONS ###
