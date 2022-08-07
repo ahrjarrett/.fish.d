@@ -4,7 +4,7 @@ set --export --global  FISH_PATH  $HOME/fish
 set --export --global  FISH_FILE  $FISH_PATH/config.fish
 set --export --global  BASH_FILE  $HOME/.bash_profile
 set --export --global  VIM_FILE   $HOME/nvim/init.vim
-set --export --global  COMPANY    bestow
+set --export --global  COMPANY    bondlink
 
 
 set --export --global fish_escape_delay_ms 10
