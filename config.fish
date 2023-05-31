@@ -1,12 +1,16 @@
 #!/opt/homebrew/bin/fish
 
-set --export --global  EDITOR     emacs
-set --export --global  DOTFILES   ~/dotfiles
-set --export --global  BASH_FILE  ~/.bash_profile
-set --export --global  VIM_FILE   ~/nvim/init.vim
-set --export --global  FISH_PATH  ~/fish
-set --export --global  FISH_FILE  $FISH_PATH/config.fish
-set --export --global  COMPANY    bondlink
+set --export --global  EDITOR         emacs
+set --export --global  DOTFILES       ~/dotfiles
+set --export --global  BASH_FILE      ~/.bash_profile
+set --export --global  VIM_FILE       ~/nvim/init.vim
+set --export --global  FISH_PATH      ~/fish
+set --export --global  FISH_FILE      $FISH_PATH/config.fish
+set --export --global  COMPANY        bondlink
+set --export --global  LSP_USE_PLISTS true
+
+set --export --global  PNPM_HOME      "/Users/aj/Library/pnpm"
+set --export --global  PATH           "$PNPM_HOME" $PATH
 
 
 set --export --global fish_escape_delay_ms 10
@@ -57,6 +61,4 @@ fnm env | source
 fish_add_path "/opt/homebrew/bin"
 
 # pnpm
-set -gx PNPM_HOME "/Users/aj/Library/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
