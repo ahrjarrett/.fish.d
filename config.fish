@@ -74,3 +74,8 @@ fnm env | source
 ## To check current dir upon Fish session start
 #__check_nvm
 fish_add_path "/opt/homebrew/bin"
+
+# pnpm
+set -gx PNPM_HOME "/Users/andrewjarrett/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end

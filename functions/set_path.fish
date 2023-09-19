@@ -7,6 +7,7 @@ fish_add_path $JAVA_HOME/bin
 fish_add_path $BREW_PATH
 fish_add_path $DOOM_PATH
 fish_add_path /opt/bin
+fish_add_path $HOME/.cargo/bin
 
 ########################
 ### FNM ################
@@ -20,3 +21,4 @@ set -gx FNM_DIR "/Users/aj/Library/Application Support/fnm";
 set -gx FNM_LOGLEVEL "info";
 set -gx FNM_NODE_DIST_MIRROR "https://nodejs.org/dist";
 set -gx FNM_ARCH "arm64";
+
