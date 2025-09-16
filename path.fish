@@ -25,3 +25,4 @@ set -gx FNM_LOGLEVEL "info";
 set -gx FNM_NODE_DIST_MIRROR "https://nodejs.org/dist";
 set -gx FNM_ARCH "arm64";
 
+fnm env | source

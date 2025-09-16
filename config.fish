@@ -8,7 +8,6 @@ set --export --global  FISH_PATH  ~/fish
 set --export --global  FISH_FILE  $FISH_PATH/config.fish
 set --export --global  COMPANY    bondlink
 
-
 set --export --global fish_escape_delay_ms 10
 
 # Load env variables
@@ -38,7 +37,8 @@ function fish_greeting
 end
 
 # load fnm (node version manager written in rust)
-fnm env | source
+# fnm env | source
+fnm env --use-on-cd | source
 
 # Better titles
 #function fish_title
@@ -57,6 +57,10 @@ fnm env | source
 fish_add_path "/opt/homebrew/bin"
 
 # pnpm
-set -gx PNPM_HOME "/Users/andrewjarrett/Library/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
+set -gx PNPM_HOME "/Users/aj/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
 # pnpm end
+
+alias assume="source (brew --prefix)/bin/assume.fish"
